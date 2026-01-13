@@ -7,40 +7,36 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
 
 <footer>
   <div class="footer-container">
-    <div>
+    <div class="footer-logo-wrapper">
       <LogoImage class="footer-logo" />
     </div>
-    <ul class="links-list">
-      <li>
-        <ul>
-          <li>
-            <a href="#">FAQs</a>
-          </li>
-          <li>
-            <a href="#">Contact Us</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <ul>
-          <li>
-            <a href="#">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="#">Press Kit</a>
-          </li>
-        </ul>
-      </li>
-      <li>
+
+    <div class="links-grid">
+      <div class="links-column">
+        <a href="#">FAQs</a>
+        <a href="#">Contact Us</a>
+      </div>
+
+      <div class="links-column">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Press Kit</a>
+      </div>
+
+      <div class="links-column">
         <a href="#">Install Guide</a>
-      </li>
-    </ul>
+      </div>
+    </div>
+
     <div class="social-links">
-      <a href="#" aria-label="Facebook"><IconFacebook class="social-icon" /></a>
-      <a href="#" aria-label="Twitter"><IconTwitter class="social-icon" /></a>
-      <a href="#" aria-label="Instagram"
-        ><IconInstagram class="social-icon" /></a
-      >
+      <a href="#" aria-label="Facebook">
+        <IconFacebook class="social-icon" />
+      </a>
+      <a href="#" aria-label="Twitter">
+        <IconTwitter class="social-icon" />
+      </a>
+      <a href="#" aria-label="Instagram">
+        <IconInstagram class="social-icon" />
+      </a>
     </div>
   </div>
 </footer>
@@ -50,59 +46,56 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
     width: 100%;
     background-color: var(--color-gray-50);
   }
+
   .footer-container {
     width: 100%;
     margin-top: 10.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-200);
+    margin-inline: auto;
     padding: var(--spacing-350);
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-200);
+    justify-items: center;
   }
 
   .footer-logo {
-    margin-left: auto;
-    margin-right: auto;
     color: var(--color-green-500);
     width: 3.4375rem;
     height: 3.4375rem;
   }
 
-  .links-list {
-    width: 10rem;
+  .links-grid {
+    max-width: 10rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-150);
+
     font: var(--text-preset-8);
     letter-spacing: var(--text-preset-8-letter-spacing);
     color: var(--color-gray-700);
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--spacing-150);
-
-    li > ul {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-150);
-    }
   }
 
-  .links-list a {
+  .links-column {
+    display: grid;
+    gap: var(--spacing-150);
+  }
+
+  .links-grid a {
     text-decoration: none;
     color: inherit;
   }
 
-  .links-list a:hover,
-  .links-list a:active {
+  .links-grid a:hover,
+  .links-grid a:active {
     color: var(--color-green-500);
   }
 
   .social-links {
     width: 10rem;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-auto-flow: column;
     justify-content: space-between;
     align-items: center;
   }
@@ -125,30 +118,27 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
       padding: 0;
       width: 69.375rem;
       height: 9.375rem;
-      flex-direction: row;
-      justify-content: start;
+
+      grid-template-columns: auto 1fr auto;
       align-items: center;
+      justify-items: start;
       gap: 8.125rem;
+      text-align: left;
     }
 
-    .links-list {
+    .links-grid {
       width: 40rem;
-      flex-direction: row;
-      justify-content: start;
-      align-items: start;
-      text-align: left;
+      grid-template-columns: repeat(3, max-content);
       gap: var(--spacing-400);
+    }
 
-      li > ul {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-50);
-      }
+    .links-column {
+      gap: var(--spacing-50);
     }
 
     .social-links {
       width: 7.5rem;
-      margin-left: auto;
+      justify-self: end;
     }
   }
 </style>
