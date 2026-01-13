@@ -47,11 +47,7 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
     background-color: var(--color-gray-50);
   }
 
-  a {
-    display: block;
-    font: var(--text-preset-9);
-    letter-spacing: var(--text-preset-9-letter-spacing);
-  }
+  /* ---------- Footer Layout ---------- */
 
   .footer-container {
     width: 100%;
@@ -66,18 +62,26 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
     justify-items: center;
   }
 
+  /* ---------- Logo ---------- */
+
   .footer-logo {
     color: var(--color-green-500);
     width: 3.4375rem;
     height: 3.4375rem;
   }
 
+  /* ---------- Links ---------- */
+
   .links-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-150);
+    width: max-content;
 
-    font: var(--text-preset-9);
+    /* Explicit typography (NO shorthand) */
+    font-family: var(--font-family, inherit);
+    font-size: var(--text-preset-9-font-size);
+    line-height: var(--text-preset-9-line-height, 1.6);
     letter-spacing: var(--text-preset-9-letter-spacing);
     color: var(--color-gray-700);
   }
@@ -88,14 +92,18 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
   }
 
   .links-grid a {
+    display: block;
     text-decoration: none;
     color: inherit;
+    line-height: inherit;
   }
 
   .links-grid a:hover,
   .links-grid a:active {
     color: var(--color-green-500);
   }
+
+  /* ---------- Social Icons ---------- */
 
   .social-links {
     width: 10rem;
@@ -111,11 +119,15 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
     height: var(--spacing-150);
   }
 
+  /* ---------- Tablet ---------- */
+
   @media (min-width: 768px) {
     .footer-container {
       margin-top: 9.5625rem;
     }
   }
+
+  /* ---------- Desktop ---------- */
 
   @media (min-width: 1200px) {
     .footer-container {
@@ -133,7 +145,7 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
 
     .links-grid {
       width: auto;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, max-content);
       gap: var(--spacing-400);
     }
 
