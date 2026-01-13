@@ -1,0 +1,148 @@
+---
+import LogoImage from "../ui/LogoImage.astro";
+import IconFacebook from "../icons/social/IconFacebook.astro";
+import IconTwitter from "../icons/social/IconTwitter.astro";
+import IconInstagram from "../icons/social/IconInstagram.astro";
+---
+
+<footer>
+  <div class="footer-container">
+    <div>
+      <LogoImage class="footer-logo" />
+    </div>
+    <ul class="links-list">
+      <div>
+        <li>
+          <a href="#">FAQs</a>
+        </li>
+        <li>
+          <a href="#">Contact Us</a>
+        </li>
+      </div>
+      <div>
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#">Press Kit</a>
+        </li>
+      </div>
+      <li>
+        <a href="#">Install Guide</a>
+      </li>
+    </ul>
+    <div class="social-links">
+      <a href="#"><IconFacebook class="social-icon" /></a>
+      <a href="#"><IconTwitter class="social-icon" /></a>
+      <a href="#"><IconInstagram class="social-icon" /></a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    width: 100%;
+    background-color: var(--color-gray-50);
+  }
+  .footer-container {
+    width: 100%;
+    margin-top: 10.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-200);
+    padding: var(--spacing-350);
+  }
+
+  .footer-logo {
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-green-500);
+    width: 3.4375rem;
+    height: 3.4375rem;
+  }
+
+  .links-list {
+    width: 10rem;
+    font: var(--text-preset-8);
+    letter-spacing: var(--text-preset-8-letter-spacing);
+    color: var(--color-gray-700);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-150);
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-150);
+    }
+  }
+
+  .links-list a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .links-list a:hover,
+  .links-list a:active {
+    color: var(--color-green-500);
+  }
+
+  .social-links {
+    width: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .social-icon {
+    color: var(--color-gray-700);
+    width: var(--spacing-150);
+    height: var(--spacing-150);
+  }
+
+  @media (min-width: 768px) {
+    .footer-container {
+      margin-top: 9.5625rem;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .footer-container {
+      margin-top: 9rem;
+      padding: 0;
+      width: 69.375rem;
+      height: 9.375rem;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      gap: 8.125rem;
+    }
+
+    .links-list {
+      width: 30rem;
+      flex-direction: row;
+      justify-content: start;
+      align-items: start;
+      text-align: left;
+      gap: var(--spacing-400);
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-50);
+      }
+    }
+
+    .social-links {
+      width: 7.5rem;
+      margin-left: auto;
+    }
+  }
+</style>

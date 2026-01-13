@@ -1,0 +1,180 @@
+---
+import type { LandingPageMeta } from "@/types/LandingPageMeta";
+import "@/styles/reset.css";
+
+const { pageMeta } = Astro.props as { pageMeta: LandingPageMeta };
+---
+
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageMeta.title}</title>
+    <meta name="description" content={pageMeta.description} />
+    {pageMeta.robots && <meta name="robots" content={pageMeta.robots} />}
+    {pageMeta.canonical && <link rel="canonical" href={pageMeta.canonical} />}
+    {
+      pageMeta.og && (
+        <>
+          <meta property="og:title" content={pageMeta.og.title} />
+          <meta property="og:description" content={pageMeta.og.description} />
+          <meta property="og:type" content={pageMeta.og.type} />
+          <meta property="og:url" content={pageMeta.og.url} />
+          <meta property="og:site_name" content={pageMeta.og.site_name} />
+          <meta property="og:image" content={pageMeta.og.image} />
+          <meta property="og:locale" content={pageMeta.og.locale} />
+        </>
+      )
+    }
+    {
+      pageMeta.twitter && (
+        <>
+          <meta name="twitter:card" content={pageMeta.twitter.card} />
+          <meta name="twitter:title" content={pageMeta.twitter.title} />
+          <meta
+            name="twitter:description"
+            content={pageMeta.twitter.description}
+          />
+          <meta name="twitter:site" content={pageMeta.twitter.site} />
+          <meta name="twitter:creator" content={pageMeta.twitter.creator} />
+          <meta name="twitter:image" content={pageMeta.twitter.image} />
+          <meta name="twitter:image:alt" content={pageMeta.twitter.image_alt} />
+        </>
+      )
+    }
+    {
+      pageMeta.jsonLd && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(pageMeta.jsonLd)}
+        />
+      )
+    }
+
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="icon" href="/assets/images/favicon-32x32.png" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+
+  :root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-black: hsl(0, 0%, 0%);
+    --color-gray-950: hsl(0, 0%, 16%);
+    --color-gray-700: hsl(210, 10%, 33%);
+    --color-gray-500: hsl(201, 11%, 66%);
+    --color-gray-50: hsl(180, 11%, 96%);
+    --color-green-500: hsl(171, 66%, 44%);
+    --color-green-300: hsl(171, 52%, 58%);
+    --color-blue-500: hsl(233, 100%, 69%);
+    --color-blue-300: hsl(232, 100%, 77%);
+
+    --font-bai-jamjuree: "Bai Jamjuree", sans-serif;
+
+    --spacing-0: 0;
+    --spacing-50: 0.5rem; /* 8px */
+    --spacing-100: 1rem; /* 16px */
+    --spacing-150: 1.5rem; /* 24px */
+    --spacing-200: 2rem; /* 32px */
+    --spacing-250: 2.5rem; /* 40px */
+    --spacing-300: 3rem; /* 48px */
+    --spacing-350: 3.5rem; /* 56px */
+    --spacing-400: 4rem; /* 64px */
+    --spacing-450: 4.5rem; /* 72px */
+    --spacing-500: 5rem; /* 80px */
+    --spacing-550: 5.5rem; /* 88px */
+    --spacing-600: 6rem; /* 96px */
+
+    --text-preset-1: 600 2.875rem/1.25 "Bai Jamjuree", sans-serif;
+    --text-preset-1-letter-spacing: -0.046875rem;
+    --text-preset-2: 600 2.5rem/1.25 "Bai Jamjuree", sans-serif;
+    --text-preset-2-letter-spacing: -0.046875rem;
+    --text-preset-3: 600 2.25rem/1.25 "Bai Jamjuree", sans-serif;
+    --text-preset-3-letter-spacing: -0.0375rem;
+    --text-preset-4: 600 2rem/1.25 "Bai Jamjuree", sans-serif;
+    --text-preset-4-letter-spacing: -0.03125rem;
+    --text-preset-5: 600 1.75rem/1.25 "Bai Jamjuree", sans-serif;
+    --text-preset-5-letter-spacing: -0.03125rem;
+    --text-preset-6: 600 1.5rem/1.25 "Bai Jamjuree", sans-serif;
+    --text-preset-6-letter-spacing: -0.025rem;
+    --text-preset-7: 600 1.25rem/1.5 "Bai Jamjuree", sans-serif;
+    --text-preset-7-letter-spacing: 0.03125rem;
+    --text-preset-8: 400 1.25rem/1.5 "Bai Jamjuree", sans-serif;
+    --text-preset-8-letter-spacing: 0.009375rem;
+    --text-preset-9: 400 1rem/1.5 "Bai Jamjuree", sans-serif;
+    --text-preset-9-letter-spacing: 0.009375rem;
+  }
+
+  body {
+    background-image: url("/assets/images/bg-header-mobile.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    font-family: var(--font-bai-jamjuree);
+  }
+
+  h1 {
+    font: var(--text-preset-4);
+    letter-spacing: var(--text-preset-4-letter-spacing);
+    color: var(--color-gray-700);
+  }
+
+  h2 {
+    font: var(--text-preset-5);
+    letter-spacing: var(--text-preset-5-letter-spacing);
+    color: var(--color-gray-700);
+  }
+
+  h3 {
+    font: var(--text-preset-6);
+    letter-spacing: var(--text-preset-6-letter-spacing);
+    color: var(--color-gray-700);
+  }
+
+  p {
+    font: var(--text-preset-9);
+    letter-spacing: var(--text-preset-9-letter-spacing);
+    color: var(--color-gray-500);
+  }
+
+  /* Tablet: 768px and up */
+  @media (min-width: 768px) {
+    body {
+      background-image: url("/assets/images/bg-header-desktop.png");
+    }
+
+    h1 {
+      font: var(--text-preset-2);
+      letter-spacing: var(--text-preset-2-letter-spacing);
+    }
+
+    h2 {
+      font: var(--text-preset-3);
+      letter-spacing: var(--text-preset-3-letter-spacing);
+    }
+
+    h3 {
+      font: var(--text-preset-6);
+      letter-spacing: var(--text-preset-6-letter-spacing);
+    }
+  }
+
+  /* Desktop: 1200px and up */
+  @media screen and (min-width: 1000px) {
+    h1 {
+      font: var(--text-preset-1);
+      letter-spacing: var(--text-preset-1-letter-spacing);
+    }
+
+    p {
+      font: var(--text-preset-8);
+      letter-spacing: var(--text-preset-8-letter-spacing);
+    }
+  }
+</style>

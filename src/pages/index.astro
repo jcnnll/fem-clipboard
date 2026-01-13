@@ -1,0 +1,69 @@
+---
+import LandingLayout from "@/layouts/default.astro";
+import type { LandingPageMeta } from "@/types/LandingPageMeta";
+import HeroSection from "@/components/content/HeroSection.astro";
+import FeaturesSection from "@/components/content/FeaturesSection.astro";
+import LogoSection from "@/components/content/LogoSection.astro";
+import DownloadSection from "@/components/content/DownloadSection.astro";
+import Footer from "@/components/content/Footer.astro";
+
+import type { CTAItem } from "@/types/CTAItem";
+
+// Required pageMeta
+const pageMeta: LandingPageMeta = {
+  title: "Clipboard | A history of everything you copy",
+  description:
+    "Clipboard lets you track and organize everything you copy across all your devices.",
+  robots: "index, follow",
+  canonical: "https://clipboard.app/",
+  og: {
+    title: "A history of everything you copy | Clipboard",
+    description:
+      "Clipboard lets you track and organize everything you copy across all your devices.",
+    type: "website",
+    url: "https://clipboard.app/",
+    site_name: "Clipboard",
+    image: "/assets/images/og-image.png",
+    locale: "en-US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "A history of everything you copy | Clipboard",
+    description:
+      "Clipboard lets you track and organize everything you copy across all your devices.",
+    site: "@clipboard",
+    creator: "@clipboard",
+    image: "/assets/images/og-image.png",
+    image_alt: "Clipboard app screenshot",
+  },
+  jsonLd: {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    applicationCategory: "Productivity",
+    audience: "Developers and productivity users",
+    operatingSystem: "iOS, macOS",
+    featureList: [
+      "Track clipboard",
+      "Sync across devices",
+      "Quick search snippets",
+    ],
+  },
+};
+
+const CTAs: CTAItem[] = [
+  { label: "Download for iOS", link: "#", type: "primary" },
+  { label: "Download for Mac", link: "#", type: "secondary" },
+];
+---
+
+<LandingLayout pageMeta={pageMeta}>
+  <header>
+    <HeroSection ctas={CTAs} />
+  </header>
+  <main>
+    <FeaturesSection />
+    <LogoSection />
+    <DownloadSection ctas={CTAs} />
+  </main>
+  <Footer />
+</LandingLayout>

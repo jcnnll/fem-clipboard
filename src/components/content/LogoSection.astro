@@ -1,0 +1,131 @@
+---
+
+---
+
+<section id="logos">
+  <div class="logos-container">
+    <img
+      src="/assets/logos/logo-google.png"
+      alt="Google logo"
+      class="logo-google"
+    />
+    <img src="/assets/logos/logo-ibm.png" alt="IBM logo" class="logo-ibm" />
+    <img
+      src="/assets/logos/logo-microsoft.png"
+      alt="Microsoft logo"
+      class="logo-microsoft"
+    />
+    <img
+      src="/assets/logos/logo-hp.png"
+      alt="Hewlett Pckard Enterprise logo"
+      class="logo-hp"
+    />
+    <img
+      src="/assets/logos/logo-vector-graphics.png"
+      alt="Vector Graphics logo"
+      class="logo-vc"
+    />
+  </div>
+</section>
+
+<style>
+  .logos-container {
+    width: 19.875rem;
+    margin-top: 9.0625rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-350);
+  }
+
+  .logo-google {
+    width: 8.6875rem;
+  }
+
+  .logo-ibm {
+    width: 7.5625rem;
+    margin: 0.5rem 0;
+  }
+
+  .logo-microsoft {
+    width: 8.5rem;
+    margin: 0.3125rem 0;
+  }
+
+  .logo-hp {
+    width: 7.0625rem;
+  }
+
+  .logo-vc {
+    width: 6.5625rem;
+  }
+
+  @media (min-width: 768px) {
+    .logos-container {
+      margin-top: 10.3rem;
+      width: 37rem;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      row-gap: var(--spacing-400);
+      column-gap: var(--spacing-500);
+    }
+
+    .logo-google {
+      width: 9.5rem;
+      margin: 0;
+    }
+
+    .logo-ibm {
+      width: 8.29rem;
+      margin: 0;
+    }
+
+    .logo-microsoft {
+      width: 9.21rem;
+      margin: 0;
+    }
+
+    .logo-hp {
+      width: 7.72rem;
+      margin: 0;
+    }
+
+    .logo-vc {
+      width: 7.2rem;
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .logos-container {
+      margin-top: 11.0625rem;
+      width: 69.5rem;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+
+    .logo-google {
+      width: 10.3125rem;
+    }
+
+    .logo-ibm {
+      width: 9rem;
+    }
+
+    .logo-microsoft {
+      width: 10rem;
+    }
+
+    .logo-hp {
+      width: 8.383rem;
+    }
+
+    .logo-vc {
+      width: 7.8125rem;
+    }
+  }
+</style>

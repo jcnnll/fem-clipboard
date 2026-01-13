@@ -1,0 +1,146 @@
+---
+
+---
+
+<div class="features">
+  <div class="feature-header">
+    <h2>Keep track of your snippets</h2>
+    <p>
+      Clipboard instantly stores any item you copy in the cloud, meaning you can
+      access your snippets immediately on all your devices. Our Mac and iOS apps
+      will help you organize everything.
+    </p>
+  </div>
+  <div class="feature-content">
+    <img src="/assets/images/image-computer.png" alt="" class="track-image" />
+    <div class="feature-list">
+      <div class="feature-list-item">
+        <h3>Quick Search</h3>
+        <p>
+          Easily search your snippets by content, category, web address,
+          application, and more.
+        </p>
+      </div>
+      <div class="feature-list-item">
+        <h3>iCloud Sync</h3>
+        <p>Instantly saves and syncs snippets across all your devices.</p>
+      </div>
+      <div class="feature-list-item">
+        <h3>Complete History</h3>
+        <p>
+          Retrieve any snippets from the first moment you started using the app.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .features {
+    max-width: 19.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 9.875rem;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-450);
+  }
+
+  .feature-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+  }
+
+  .feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-450);
+    align-items: center;
+  }
+
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-350);
+  }
+
+  .feature-list-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-50);
+  }
+
+  .track-image {
+    width: 19.5rem;
+  }
+
+  /* Tablet: 768px and up */
+  @media (min-width: 768px) {
+    .features {
+      max-width: 38.5rem;
+      gap: var(--spacing-600);
+    }
+
+    .feature-header {
+      p {
+        font: var(--text-preset-8);
+        letter-spacing: var(--text-preset-8-letter-spacing);
+      }
+    }
+
+    .feature-content {
+      gap: var(--spacing-600);
+    }
+
+    .track-image {
+      width: 38rem;
+    }
+
+    .feature-list {
+      max-width: 21.875rem;
+      gap: var(--spacing-400);
+
+      p {
+        font: var(--text-preset-9);
+        letter-spacing: var(--text-preset-9-letter-spacing);
+      }
+    }
+  }
+
+  /* Desktop: 1000px and up */
+  @media (min-width: 1000px) {
+    .features {
+      align-items: flex-start;
+      max-width: 90rem;
+      gap: var(--spacing-450);
+      overflow: hidden;
+    }
+
+    .feature-header {
+      align-self: center;
+      max-width: 45.625rem;
+    }
+
+    .feature-content {
+      max-width: 90rem;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--spacing-600);
+    }
+
+    .feature-list {
+      width: 21.875rem;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .track-image {
+      margin-left: -1.875rem;
+      margin-right: 1.875rem;
+      width: 47rem;
+    }
+  }
+</style>

@@ -1,0 +1,114 @@
+---
+import LogoImage from "../ui/LogoImage.astro";
+import CtaLink from "../ui/CtaLink.astro";
+
+import type { CTAItem } from "@/types/CTAItem";
+
+interface Props {
+  ctas: CTAItem[];
+}
+
+const { ctas } = Astro.props;
+---
+
+<section id="hero">
+  <div class="hero-container">
+    <LogoImage class="logo" />
+    <div>
+      <div class="hero-content-container">
+        <div class="hero-content">
+          <h1>A history of everything you copy</h1>
+          <p>
+            Clipboard allows you to track and organize everything you copy.
+            Instantly access your clipboard on all your devices.
+          </p>
+        </div>
+        <div class="hero-cta">
+          {
+            ctas.map((item) => (
+              <CtaLink text={item.label} href={item.link} type={item.type} />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-container {
+    max-width: 19.875rem;
+    margin-top: 7.6875rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-400);
+  }
+
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-green-500);
+    width: 7.8125rem;
+    height: 7.8125rem;
+  }
+
+  .hero-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-350);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-cta {
+    width: 19.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Tablet: 768px and up */
+  @media (min-width: 768px) {
+    .hero-container {
+      margin-top: 8.1875rem;
+      max-width: 38.5rem;
+      gap: var(--spacing-350);
+    }
+
+    .hero-content-container {
+      gap: var(--spacing-300);
+
+      p {
+        font: var(--text-preset-8);
+        letter-spacing: var(--text-preset-8-letter-spacing);
+      }
+    }
+
+    .hero-cta {
+      width: 29.375rem;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .hero-container {
+      max-width: 45.625rem;
+      gap: var(--spacing-350);
+    }
+
+    .hero-content-container {
+      gap: var(--spacing-300);
+    }
+  }
+</style>

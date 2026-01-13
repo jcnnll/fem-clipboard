@@ -1,0 +1,138 @@
+/* Box sizing and border reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+/* Remove default margins and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base body styles */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make images and media responsive */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove list styles on ul/ol */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove text decoration on links, inherit color */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Forms and inputs */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  line-height: inherit;
+  background: none;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons inherit font and remove default appearance */
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove quotes on blockquote/cite */
+blockquote,
+q {
+  quotes: none;
+}
+
+/* Blockquote q pseudo elements */
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+}
+
+/* Preformatted text */
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Horizontal rules */
+hr {
+  border-top-width: 1px;
+  border-color: currentColor;
+  opacity: 0.5;
+}
+
+/* SVGs inherit color */
+svg {
+  fill: currentColor;
+}
+
+/* Form element resets for consistent sizing */
+button,
+input,
+select,
+textarea {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+/* Anchor defaults */
+a {
+  background-color: transparent;
+}
+
+/* Remove default focus outline for accessibility purposes (optional) */
+:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}

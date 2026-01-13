@@ -1,0 +1,53 @@
+---
+interface Props {
+  text: string;
+  href: string;
+  type?: "primary" | "secondary";
+}
+
+const { text, href, type = "primary" } = Astro.props as Props;
+---
+
+<a href={href} class={type === "primary" ? "btn primary" : "btn secondary"}>
+  {text}
+</a>
+
+<style>
+  .btn {
+    width: 100%;
+    color: var(--color-white);
+    font: var(--text-preset-7);
+    letter-spacing: var(--text-preset-7-letter-spacing);
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    display: inline-block;
+    height: 3.5rem;
+    transition: background-color 200ms ease;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1531);
+  }
+
+  .primary {
+    background-color: var(--color-green-500);
+  }
+
+  .primary:hover,
+  .primary:active {
+    background-color: var(--color-green-300);
+  }
+
+  .secondary {
+    background-color: var(--color-blue-500);
+  }
+
+  .secondary:hover,
+  .secondary:active {
+    background-color: var(--color-blue-300);
+  }
+
+  /* Tablet: 768px and up */
+  @media (min-width: 768px) {
+    .btn {
+      width: 14.5rem;
+    }
+  }
+</style>

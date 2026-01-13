@@ -1,0 +1,190 @@
+---
+import IconBlackList from "@/components/icons/features/IconBlackList.astro";
+import IconPlainText from "@/components/icons/features/IconPlainText.astro";
+import IconPreview from "@/components/icons/features/IconPreview.astro";
+---
+
+<div class="features">
+  <div class="feature-header">
+    <h2>Supercharge your workflow</h2>
+    <p>We’ve got the tools to boost your productivity.</p>
+  </div>
+  <div class="feature-list">
+    <div class="feature-list-item">
+      <IconBlackList class="icon-blacklist" />
+      <div class="feature-item-detail">
+        <h3>Create blacklists</h3>
+        <p>
+          Ensure sensitive information never makes its way to your clipboard by
+          excluding certain sources.
+        </p>
+      </div>
+    </div>
+    <div class="feature-list-item">
+      <IconPlainText class="icon-plain-text" />
+      <div class="feature-item-detail">
+        <h3>Plain text snippets</h3>
+        <p>
+          Remove unwanted formatting from copied text for a consistent look.
+        </p>
+      </div>
+    </div>
+    <div class="feature-list-item">
+      <IconPreview class="icon-preview" />
+      <div class="feature-item-detail">
+        <h3>Sneak preview</h3>
+        <p>Quick preview of all snippets on your Clipboard for easy access.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .features {
+    width: 19.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8.0625rem;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-550);
+  }
+
+  .feature-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+  }
+
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-400);
+  }
+
+  .feature-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-250);
+  }
+
+  .feature-item-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-100);
+  }
+
+  .track-image {
+    width: 19.5rem;
+  }
+
+  .icon-blacklist {
+    color: var(--color-gray-500);
+    width: 2.7rem;
+    height: 2.4rem;
+  }
+
+  .icon-plain-text {
+    color: var(--color-gray-500);
+    width: 2.19rem;
+    height: 2rem;
+  }
+
+  .icon-preview {
+    color: var(--color-gray-500);
+    width: 3.1rem;
+    height: 2rem;
+  }
+
+  /* Tablet: 768px and up */
+  @media (min-width: 768px) {
+    .features {
+      margin-top: 9.625rem;
+      width: 38.5rem;
+      gap: var(--spacing-450);
+    }
+
+    .feature-header {
+      width: 38.5rem;
+      p {
+        font: var(--text-preset-8);
+        letter-spacing: var(--text-preset-8-letter-spacing);
+      }
+    }
+
+    .feature-content {
+      gap: var(--spacing-600);
+    }
+
+    .feature-list {
+      width: 25rem;
+
+      gap: var(--spacing-250);
+
+      p {
+        font: var(--text-preset-9);
+        letter-spacing: var(--text-preset-9-letter-spacing);
+      }
+    }
+
+    .feature-list-item {
+      gap: 2.8125rem;
+    }
+
+    .icon-blacklist {
+      width: 2.7rem;
+      height: 2.5rem;
+    }
+
+    .icon-plain-text {
+      width: 2.7375rem;
+      height: 2.5rem;
+    }
+
+    .icon-preview {
+      width: 3.9rem;
+      height: 2.5rem;
+    }
+  }
+
+  /* Desktop: 1000px and up */
+  @media (min-width: 1000px) {
+    .features {
+      margin-top: 10.75rem;
+      align-items: flex-start;
+      width: 69.625rem;
+      gap: var(--spacing-450);
+      overflow: hidden;
+    }
+
+    .feature-header {
+      align-self: center;
+      max-width: 45.625rem;
+    }
+
+    .feature-content {
+      width: 90rem;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--spacing-450);
+    }
+
+    .feature-list {
+      width: 90rem;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--spacing-200);
+    }
+
+    .feature-list-item {
+      width: 21.875rem;
+      text-align: center;
+    }
+  }
+</style>
