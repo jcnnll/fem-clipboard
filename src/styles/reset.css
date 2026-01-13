@@ -70,6 +70,8 @@ select {
   color: inherit;
   margin: 0;
   padding: 0;
+  border-radius: 0;
+  background-color: transparent;
 }
 
 /* Buttons inherit font and remove default appearance */
@@ -101,8 +103,7 @@ q::after {
 
 /* Preformatted text */
 pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
+  font-family: monospace;
 }
 
 /* Horizontal rules */
@@ -117,22 +118,7 @@ svg {
   fill: currentColor;
 }
 
-/* Form element resets for consistent sizing */
-button,
-input,
-select,
-textarea {
-  border-radius: 0;
-  background-color: transparent;
-}
-
 /* Anchor defaults */
 a {
   background-color: transparent;
-}
-
-/* Remove default focus outline for accessibility purposes (optional) */
-:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }
