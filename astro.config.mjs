@@ -11,6 +11,7 @@ export default defineConfig({
   outDir: "docs",
 
   vite: {
+    base: "/fem-clipboard/",
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url)),
