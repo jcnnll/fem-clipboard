@@ -76,9 +76,9 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-150);
-    width: max-content;
+    width: 100%;
 
-    /* Explicit typography (NO shorthand) */
+    /* Explicit typography */
     font-family: var(--font-family, inherit);
     font-size: 1rem;
     line-height: 1.5;
@@ -96,7 +96,10 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
     text-decoration: none;
     color: inherit;
     line-height: inherit;
-    white-space: nowrap;
+
+    /* FEM-safe text behavior */
+    white-space: normal;
+    min-width: 0;
   }
 
   .links-grid a:hover,
@@ -145,8 +148,8 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
     }
 
     .links-grid {
-      width: auto;
-      grid-template-columns: repeat(3, max-content);
+      width: 40rem;
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--spacing-400);
     }
 
