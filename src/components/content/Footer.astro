@@ -11,22 +11,26 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
       <LogoImage class="footer-logo" />
     </div>
     <ul class="links-list">
-      <ul>
-        <li>
-          <a href="#">FAQs</a>
-        </li>
-        <li>
-          <a href="#">Contact Us</a>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <a href="#">Privacy Policy</a>
-        </li>
-        <li>
-          <a href="#">Press Kit</a>
-        </li>
-      </ul>
+      <li>
+        <ul>
+          <li>
+            <a href="#">FAQs</a>
+          </li>
+          <li>
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#">Press Kit</a>
+          </li>
+        </ul>
+      </li>
       <li>
         <a href="#">Install Guide</a>
       </li>
@@ -78,7 +82,7 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
     justify-content: center;
     gap: var(--spacing-150);
 
-    ul {
+    li > ul {
       display: flex;
       flex-direction: column;
       gap: var(--spacing-150);
@@ -115,7 +119,7 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
     }
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1200px) {
     .footer-container {
       margin-top: 9rem;
       padding: 0;
@@ -135,7 +139,7 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
       text-align: left;
       gap: var(--spacing-400);
 
-      ul {
+      li > ul {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-50);
