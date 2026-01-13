@@ -48,6 +48,7 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
   }
 
   a {
+    display: block;
     font: var(--text-preset-9);
     letter-spacing: var(--text-preset-9-letter-spacing);
   }
@@ -132,7 +133,7 @@ import IconInstagram from "../icons/social/IconInstagram.astro";
 
     .links-grid {
       width: auto;
-      grid-template-columns: repeat(3, 10rem);
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--spacing-400);
     }
 
