@@ -1,30 +1,18 @@
 ---
-
+import googleImg from "@/assets/logos/logo-google.png";
+import ibmImg from "@/assets/logos/logo-ibm.png";
+import microsoftImg from "@/assets/logos/logo-microsoft.png";
+import hpImg from "@/assets/logos/logo-hp.png";
+import vcImg from "@/assets/logos/logo-vector-graphics.png";
 ---
 
 <section id="logos">
   <div class="logos-container">
-    <img
-      src="/assets/logos/logo-google.png"
-      alt="Google logo"
-      class="logo-google"
-    />
-    <img src="/assets/logos/logo-ibm.png" alt="IBM logo" class="logo-ibm" />
-    <img
-      src="/assets/logos/logo-microsoft.png"
-      alt="Microsoft logo"
-      class="logo-microsoft"
-    />
-    <img
-      src="/assets/logos/logo-hp.png"
-      alt="Hewlett Pckard Enterprise logo"
-      class="logo-hp"
-    />
-    <img
-      src="/assets/logos/logo-vector-graphics.png"
-      alt="Vector Graphics logo"
-      class="logo-vc"
-    />
+    <img src={googleImg.src} alt="Google logo" class="logo-google" />
+    <img src={ibmImg.src} alt="IBM logo" class="logo-ibm" />
+    <img src={microsoftImg.src} alt="Microsoft logo" class="logo-microsoft" />
+    <img src={hpImg.src} alt="Hewlett Pckard Enterprise logo" class="logo-hp" />
+    <img src={vcImg.src} alt="Vector Graphics logo" class="logo-vc" />
   </div>
 </section>
 
